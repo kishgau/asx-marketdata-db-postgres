@@ -1,0 +1,29 @@
+To create a seeded db running in docker container
+
+1.docker build -t asx_eod_psql .
+Explanation: This command will use Dockerfile in current directory to build an image named Dockerfile
+
+2. docker images
+Verify whether asx_eod_psql image has been created in local registry
+
+3. docker run -d --name asx_eod_psql_runningv12.1 -p 5432:5432 asx_eod_psql
+   docker logs asx_eod_psql_running
+Explanation: Test to make sure container is being run as expected.
+
+4.Create registry xyz in docker hub 
+ Use webconsole to create repo
+
+5.docker login
+Explanation: Use your credentials to login to docker
+
+6.docker tag <imageid> useraccount/<reponame>
+Explanation:tag docker image
+    
+7.docker push tagname<e.g. useraccount/<reponame>
+Explanation:push docker image into registry
+
+To pull image from registry and run docker container
+8. 
+
+
+
